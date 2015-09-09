@@ -18,6 +18,9 @@ module SocialNetwork
         expect { SocialNetwork::Node.new(nil, 't', 't') }
           .to raise_error SocialNetwork::NodeIdInvalidError
       end
+      it 'freezes the node id' do
+        expect(subject.id.frozen?).to be true
+      end
       it 'sets the node type' do
         expect(subject.type).to eql 'testtype'
       end

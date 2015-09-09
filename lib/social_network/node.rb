@@ -8,7 +8,7 @@ module SocialNetwork
         fail NodeIdInvalidError, 'Node id must not be empty nor nil'
       end
 
-      @id = id
+      @id = id.freeze
       @type = type
       @label = label
     end
