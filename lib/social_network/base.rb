@@ -7,8 +7,8 @@ module SocialNetwork
     attr_accessor :name, :nodes, :edges
 
     def initialize(name,
-                   nodes = Helper::NodeList.new,
-                   edges = Helper::EdgeList.new)
+                   nodes = Helper::NodeList.new([]),
+                   edges = Helper::EdgeList.new([]))
       @name = name || fail(NameMissingError,
                            'Please provide a name for the social network')
       @nodes = nodes
