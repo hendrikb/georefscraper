@@ -20,6 +20,8 @@ module SocialNetwork
       @nodes.dup.freeze
     end
 
+    # Pushes one new node to this social network instance
+    # @param node [Node] The new node in this network, not linked via {Edge} now
     def push_node(node)
       @nodes << node
     end
