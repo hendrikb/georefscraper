@@ -14,12 +14,12 @@ namespace :lombardi_graphml do
       sn = SocialNetwork::Parser::GraphML.parse(
         File.new(args[:graphml]), args[:name])
 
-      puts "graph #{sn.id} {"
+      puts "graph #{sn.name} {"
       sn.nodes.each do |node|
-        puts "n#{node.id} [label=\"#{node.label.delete('"')}\"];"
+        puts "\tn#{node.id} [label=\"#{node.label.delete('"')}\"];"
       end
       sn.edges.each do |edge|
-        puts "n#{edge.source.id} -- n#{edge.target.id};"
+        puts "\tn#{edge.source.id} -- n#{edge.target.id};"
       end
       puts '}  // drop this code into a graphviz tool, like so:'
       puts '   //   dot -Tpng -ograph.png test.dot'
