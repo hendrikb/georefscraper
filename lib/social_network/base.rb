@@ -26,6 +26,17 @@ module SocialNetwork
       @nodes << node
     end
 
+    # @return [SocialNetwork::Helper::EdgeList] List of {Edge}s in this network
+    def edges
+      @edges.dup.freeze
+    end
+
+    # Pushes one new relationship ({Edge}) to this social network instance
+    # @param edge [Edge] The new {Edge} in this network
+    def push_edge(edge)
+      @edges << edge
+    end
+
     # Compare SocialNetwork instances to each other.
     # A social network is considered the same, if all nodes and all edges are
     # exactly the same. Note that the #name is not considered for equality!

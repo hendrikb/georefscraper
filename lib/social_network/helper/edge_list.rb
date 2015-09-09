@@ -5,5 +5,9 @@ module SocialNetwork
     # {Edge Edges}
     class EdgeList < Array
     end
+
+    # This gets raised if you've tried to add an edge more than once to an
+    # {EdgeList}
+    class DuplicateEdgeError < Exception; end
   end
 end

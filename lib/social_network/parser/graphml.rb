@@ -44,7 +44,7 @@ module SocialNetwork
             target = @nodes[edge.attributes['target']]
             type =  edge.get_text('data[@key="type"]')
             edge_object = SocialNetwork::Edge.new source, target, type
-            @network.edges << edge_object
+            @network.push_edge edge_object
           end
         end
       end
