@@ -1,0 +1,797 @@
+<?xml version="1.0"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xgmml="http://www.cs.rpi.edu/XGMML" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns      http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key attr.name="type" attr.type="string" for="node" id="type"/>
+  <key attr.name="name" attr.type="string" for="node" id="name"/>
+  <key attr.name="type" attr.type="string" for="edge" id="type"/>
+  <key attr.name="amount" attr.type="string" for="edge" id="amount"/>
+  <graph id="G" edgedefault="directed">
+    <node xmlns="" id="5140">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Von Roll A.G. - Switz</data>
+    </node>
+    <node xmlns="" id="5138">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Ohio toxic incin.</data>
+    </node>
+    <node xmlns="" id="5136">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">J.P. Morgan - NY -</data>
+    </node>
+    <node xmlns="" id="5131">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Union Bank of Switz</data>
+    </node>
+    <node xmlns="" id="5129">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Cartier Int'l</data>
+    </node>
+    <node xmlns="" id="5127">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Rothmann Int'l</data>
+    </node>
+    <node xmlns="" id="5125">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Mont Blanc Co.</data>
+    </node>
+    <node xmlns="" id="5123">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Rembrandt Group - So.Afr. -</data>
+    </node>
+    <node xmlns="" id="5119">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Hawaii real estate</data>
+    </node>
+    <node xmlns="" id="5116">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Richmont Group - Switz -</data>
+    </node>
+    <node xmlns="" id="5113">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Anton Rupert</data>
+    </node>
+    <node xmlns="" id="5111">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Mikel Faulkner</data>
+    </node>
+    <node xmlns="" id="5109">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Frontier Oil - Denver -</data>
+    </node>
+    <node xmlns="" id="5107">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Tesoro Oil</data>
+    </node>
+    <node xmlns="" id="5104">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Alan Quasha</data>
+    </node>
+    <node xmlns="" id="5102">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Ferdinand Marcos pres Philippines 1965-86</data>
+    </node>
+    <node xmlns="" id="5100">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">William Quasha esq.</data>
+    </node>
+    <node xmlns="" id="5098">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Wayne Quasha</data>
+    </node>
+    <node xmlns="" id="5094">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Int'l Mins &amp; Resources</data>
+    </node>
+    <node xmlns="" id="5093">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">No. Amer. Resources - BWI -</data>
+    </node>
+    <node xmlns="" id="5091">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">[3]</data>
+    </node>
+    <node xmlns="" id="5089">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#FinalInfo</data>
+      <data key="name">Two weeks later Saddam Hussein invades Kuwait</data>
+    </node>
+    <node xmlns="" id="5087">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#FinalInfo</data>
+      <data key="name">July 1990: Bush bails out with profit</data>
+    </node>
+    <node xmlns="" id="5084">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">90/3</data>
+    </node>
+    <node xmlns="" id="5082">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Sheik Isa bin Khalifah of Bahrain</data>
+    </node>
+    <node xmlns="" id="5080">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Waste Tech Inc.</data>
+    </node>
+    <node xmlns="" id="5077">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Michael Ameen</data>
+    </node>
+    <node xmlns="" id="5074">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Bahrain oil deal</data>
+    </node>
+    <node xmlns="" id="5071">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">89/3</data>
+    </node>
+    <node xmlns="" id="5067">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">E-Z Serve - Houston -</data>
+    </node>
+    <node xmlns="" id="5065">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">85/3</data>
+    </node>
+    <node xmlns="" id="5063">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Theodore Brunn</data>
+    </node>
+    <node xmlns="" id="5061">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Harvard Endowm't - Mass -</data>
+    </node>
+    <node xmlns="" id="5059">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">84/3</data>
+    </node>
+    <node xmlns="" id="5057">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">[2]</data>
+    </node>
+    <node xmlns="" id="5056">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Harken Energy Corp. - Dallas -</data>
+    </node>
+    <node xmlns="" id="5051">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">88/3</data>
+    </node>
+    <node xmlns="" id="5048">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Worthen Nat Bk - Ark -</data>
+    </node>
+    <node xmlns="" id="5046">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Neth Antilles Co.</data>
+    </node>
+    <node xmlns="" id="5044">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Talat Othman</data>
+    </node>
+    <node xmlns="" id="5042">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Saudi Arab Finance</data>
+    </node>
+    <node xmlns="" id="5040">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">UBME - Dubai -</data>
+    </node>
+    <node xmlns="" id="5038">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Beirut Riyadh Bank</data>
+    </node>
+    <node xmlns="" id="5035">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Sheik Abdullah Taha Bakhsh</data>
+    </node>
+    <node xmlns="" id="5033">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Stephens Inc. - Ark -</data>
+    </node>
+    <node xmlns="" id="5031">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Sheik Khalifah</data>
+    </node>
+    <node xmlns="" id="889">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Agha Hasan Abedi</data>
+    </node>
+    <node xmlns="" id="5028">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">BCCI S.A. - Lux</data>
+    </node>
+    <node xmlns="" id="886">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Ghaith Pharaon</data>
+    </node>
+    <node xmlns="" id="5025">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Sid R. Bass</data>
+    </node>
+    <node xmlns="" id="5023">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Bass Bros Ents - FW -</data>
+    </node>
+    <node xmlns="" id="5021">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Amer S&amp;L - Calif -</data>
+    </node>
+    <node xmlns="" id="5019">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Robert Bass</data>
+    </node>
+    <node xmlns="" id="5017">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Jackson Stephens</data>
+    </node>
+    <node xmlns="" id="5015">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Repub Nat Comm</data>
+    </node>
+    <node xmlns="" id="5012">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">86/3</data>
+    </node>
+    <node xmlns="" id="5010">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">George H.W. Bush pres US 1989-93 vp US 1981-9</data>
+    </node>
+    <node xmlns="" id="5008">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">86/2</data>
+    </node>
+    <node xmlns="" id="5005">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">84/2</data>
+    </node>
+    <node xmlns="" id="5003">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">84/1</data>
+    </node>
+    <node xmlns="" id="5000">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">82/1</data>
+    </node>
+    <node xmlns="" id="4998">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">SWAPS - Houston -</data>
+    </node>
+    <node xmlns="" id="4996">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Saudi Arab Mkts - Houston -</data>
+    </node>
+    <node xmlns="" id="4994">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Phillip Uzielli</data>
+    </node>
+    <node xmlns="" id="4991">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Saudi Bank - Paris -</data>
+    </node>
+    <node xmlns="" id="4989">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Osama bin Laden</data>
+    </node>
+    <node xmlns="" id="4987">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Sheik Salim bin Laden</data>
+    </node>
+    <node xmlns="" id="4985">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Main Bank - Houston -</data>
+    </node>
+    <node xmlns="" id="4982">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Arbusto Energy - Texas</data>
+    </node>
+    <node xmlns="" id="4979">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">George W. Bush "Jr" gov TX 1996-</data>
+    </node>
+    <node xmlns="" id="4977">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Bush Energy - Texas -</data>
+    </node>
+    <node xmlns="" id="4975">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Lloyd Bentsen US sen 1971-92</data>
+    </node>
+    <node xmlns="" id="4973">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Lan Bentson</data>
+    </node>
+    <node xmlns="" id="4971">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Bath Bentsen Ints. - Houston -</data>
+    </node>
+    <node xmlns="" id="4968">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Cotopax - Caymans -</data>
+    </node>
+    <node xmlns="" id="4966">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">80/1</data>
+    </node>
+    <node xmlns="" id="4964">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">JB &amp; Assocs. - Houston -</data>
+    </node>
+    <node xmlns="" id="567">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Farhad Azima</data>
+    </node>
+    <node xmlns="" id="4961">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">81/1</data>
+    </node>
+    <node xmlns="" id="4959">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Skyways Aircraft - Texas -</data>
+    </node>
+    <node xmlns="" id="4957">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">James R. Bath</data>
+    </node>
+    <node xmlns="" id="4955">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">83/2</data>
+    </node>
+    <node xmlns="" id="4953">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">William Dewitt</data>
+    </node>
+    <node xmlns="" id="4951">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Person</data>
+      <data key="name">Mercer Reynolds</data>
+    </node>
+    <node xmlns="" id="4949">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Year</data>
+      <data key="name">82/2</data>
+    </node>
+    <node xmlns="" id="4948">
+      <data key="type">http://www.lombardinetworks.net/lombardi.owl#Institution</data>
+      <data key="name">Spectrum7 Oil - Texas</data>
+    </node>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5140" target="5080">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5136" target="5080">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5131" target="5080">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5131" target="5051">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#SaleTransfer</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5131" target="5109">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5123" target="5129">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5123" target="5127">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5123" target="5125">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5116" target="5093">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5113" target="5123">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5113" target="5116">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5113" target="5109">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5111" target="5109">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5104" target="5109">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5104" target="5107">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#BlockedFailed</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5104" target="5093">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5100" target="5104">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5100" target="5102">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5100" target="5098">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5094" target="5059">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5093" target="5119">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#SaleTransfer</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5093" target="5098">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5093" target="5056">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5093" target="5094">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5089" target="5084">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5084" target="5091">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5084" target="5087">
+      <data xmlns="" key="amount">$ 848 k</data>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5084" target="5074">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5082" target="5074">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5080" target="5138">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5077" target="5074">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5074" target="5033">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5071" target="5084">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5065" target="5119">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5065" target="5093">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5065" target="5012">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5065" target="5067">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5063" target="5059">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5061" target="5059">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5059" target="5065">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5056" target="5059">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5056" target="5057">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5051" target="5071">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5046" target="5131">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5046" target="5051">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5044" target="5051">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5044" target="5046">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5035" target="5048">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5035" target="5046">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5035" target="5044">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5035" target="5042">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5035" target="5040">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5035" target="5038">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5035" target="4991">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5035" target="5028">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5033" target="5080">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5033" target="5051">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5033" target="5048">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5033" target="5028">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5031" target="5074">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5031" target="5028">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="889" target="5028">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="886" target="5028">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="886" target="4985">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5025" target="5023">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5023" target="5074">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5019" target="5023">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5019" target="5021">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5019" target="5015">
+      <data xmlns="" key="amount">$ 100 k</data>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5017" target="5033">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5015" target="5017">
+      <data xmlns="" key="amount">$ 100 k</data>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5012" target="5109">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#BlockedFailed</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5012" target="5051">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5012" target="5008">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5010" target="5015">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5005" target="5008">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5003" target="5005">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="5000" target="5003">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4994" target="4955">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4989" target="4987">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4987" target="4991">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4982" target="4966">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4979" target="5012">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4979" target="5010">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4979" target="5005">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4979" target="4982">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4979" target="4977">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4979" target="4957">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4973" target="4975">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4973" target="4971">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4968" target="4966">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4966" target="4961">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="567" target="4961">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4961" target="5000">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="5000">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4998">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4996">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4955">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4987">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#Association</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4985">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4977">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4971">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4966">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4964">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4961">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4959">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4957" target="4955">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#FinancialTransaction</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4953" target="4949">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4951" target="4949">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4949" target="4955">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#YearArrow</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="4948" target="4949">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">http://www.lombardinetworks.net/lombardi.owl#InfluenceControl</data>
+    </edge>
+  </graph>
+</graphml>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xgmml="http://www.cs.rpi.edu/XGMML" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns      http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key attr.name="type" attr.type="string" for="node" id="type"/>
+  <key attr.name="name" attr.type="string" for="node" id="name"/>
+  <key attr.name="type" attr.type="string" for="edge" id="type"/>
+  <key attr.name="amount" attr.type="string" for="edge" id="amount"/>
+  <graph id="TestNet" edgedefault="directed">
+    <node xmlns="" id="n1">
+      <data key="type">TNi</data>
+      <data key="name">vonRoll</data>
+    </node>
+    <node xmlns="" id="n2">
+      <data key="type">TNi</data>
+      <data key="name">Ohio</data>
+    </node>
+    <node xmlns="" id="n3">
+      <data key="type">TNp</data>
+      <data key="name">Faulkner</data>
+    </node>
+    <node xmlns="" id="n4">
+      <data key="type">TNp</data>
+      <data key="name">Quasha</data>
+    </node>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="n1" target="n2">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">TEi</data>
+    </edge>
+    <edge xmlns="http://www.cs.rpi.edu/XGMML" source="n2" target="n4">
+      <data xmlns="" key="amount"/>
+      <data xmlns="" key="type">TEf</data>
+    </edge>
+  </graph>
+</graphml>
