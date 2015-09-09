@@ -14,6 +14,7 @@ module SocialNetwork
           @doc = REXML::Document.new(@graphml)
         end
 
+        # @return [SocialNetwork::Base] instance that was parsed from GraphML
         def network
           graph_node = @doc.root.elements['graph']
           @network_id = graph_node.attributes['id'] if @network_id.nil?
@@ -47,6 +48,12 @@ module SocialNetwork
           end
         end
       end
+
+      # Parses a GraphML file and tries to render a {SocialNetwork::Base social
+      # network} from it.
+      # @return [SocialNetWork::Base] Social Network parsed from the GraphML
+      # @param graphml [String] File name to a graphml file
+      # @param overwrite_id [String] Optional new name for the social network
       def self.parse(graphml, overwrite_id = nil)
         SocialNetwork::Parser::GraphML::Parser.new(graphml, overwrite_id)
           .network
