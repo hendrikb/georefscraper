@@ -43,7 +43,8 @@ module SocialNetwork
         end
         context '#push' do
           it 'adds non duplicate node to node list' do
-            expect(subject.push(node3, node4)).to eq NodeList.new([node1, node2, node3, node4])
+            expect(subject.push(node3, node4))
+              .to eq NodeList.new([node1, node2, node3, node4])
           end
           it 'prevents adding a duplicate node' do
             expect { subject.push(node1_dup) }.to raise_error DuplicateNodeError
@@ -51,10 +52,12 @@ module SocialNetwork
         end
         context '#unshift' do
           it 'adds non duplicate node to node list' do
-            expect(subject.unshift(node3, node4)).to eq NodeList.new([node3, node4, node1, node2])
+            expect(subject.unshift(node3, node4))
+              .to eq NodeList.new([node3, node4, node1, node2])
           end
           it 'prevents adding a duplicate node' do
-            expect { subject.unshift(node1_dup) }.to raise_error DuplicateNodeError
+            expect { subject.unshift(node1_dup) }
+              .to raise_error DuplicateNodeError
           end
         end
       end
