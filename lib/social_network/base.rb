@@ -53,7 +53,4 @@ module SocialNetwork
   # Exception that is thrown, if one forgot to give the new social net a name
   class NameMissingError < Exception; end
 
-  # Exception that is thrown, if one tries to modify the {Base#nodes} directl.
-  # Please use {Base#push_node} instead!
-  class NodeAccessError < Exception; end
 end
