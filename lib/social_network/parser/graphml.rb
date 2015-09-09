@@ -34,7 +34,7 @@ module SocialNetwork
             name =  node.get_text('data[@key="name"]').to_s
             node_object = SocialNetwork::Node.new id, type, name
             @nodes[id] = node_object
-            @network.nodes << node_object
+            @network.push_node node_object
           end
         end
 

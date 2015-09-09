@@ -4,7 +4,7 @@ module SocialNetwork
   # Represents a social network with all its {Node Nodes} (actors) and
   # {Edge Edges} (relationships between actors)
   class Base
-    attr_accessor :name, :nodes, :edges
+    attr_accessor :name
 
     def initialize(name,
                    nodes = Helper::NodeList.new([]),
@@ -13,6 +13,15 @@ module SocialNetwork
                            'Please provide a name for the social network')
       @nodes = nodes
       @edges = edges
+    end
+
+    # @return [SocialNetwork::Helper::NodeList] List of nodes in this network
+    def nodes
+      @nodes.dup.freeze
+    end
+
+    def push_node(node)
+      @nodes << node
     end
 
     # Compare SocialNetwork instances to each other.
@@ -30,4 +39,8 @@ module SocialNetwork
 
   # Exception that is thrown, if one forgot to give the new social net a name
   class NameMissingError < Exception; end
+
+  # Exception that is thrown, if one tries to modify the {Base#nodes} directl.
+  # Please use {Base#push_node} instead!
+  class NodeAccessError < Exception; end
 end
