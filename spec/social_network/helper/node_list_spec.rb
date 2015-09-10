@@ -15,7 +15,7 @@ module SocialNetwork
         expect(subject.length).to eq 2
       end
 
-      it 'adds appropriate number of nodes' do
+      it 'adds correct nodes - and only them' do
         expect(subject).to eq [node1, node2]
       end
 
