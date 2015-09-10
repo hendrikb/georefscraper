@@ -21,14 +21,6 @@ module SocialNetwork
         super(node_array)
       end
 
-      # Checks if the given {Node} is already existent in this instance of
-      # {NodeList}
-      # @param other [Node} The other {Node} that's supposed to looked for here
-      # @return [Boolean] whether or not the other {Node} is already in here
-      def include?(other)
-        self.any? { |n| n == other }
-      end
-
       # Adds one other {Node} to this instance of {NodeList}. Raises a
       # {DuplicateNodeError} if the other node is already in this list.
       # @param other [Node] The other instance to to be added to this list
