@@ -73,7 +73,6 @@ module SocialNetwork
         end
 
         it 'raises if trying to push duplicate nodes' do
-          pending
           n1 = Node.new('n1', 't1', 'l1')
           n2 = Node.new('n2', 't1', 'l2')
           subject.push_node(n1)
