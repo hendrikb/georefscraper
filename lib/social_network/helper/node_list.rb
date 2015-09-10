@@ -7,10 +7,17 @@ module SocialNetwork
       # Creates an instance of {NodeList} holding the {Node nodes} given in the
       # node_array parameter. Raises {DuplicateNodeError} if this given
       # node_array contains duplicate nodes.
+      # Raises {InvalidNodeInsertError} if one of the given nodes is not of
+      # class {Node}.
       def initialize(node_array)
+        if node_array.any? { |n| !valid?(n) }
+          fail InvalidNodeInsertError, 'Given invalid node was not inserted'
+        end
+
         if node_array.uniq(&:id).length != node_array.length
           fail DuplicateNodeError, 'Initialization array contains duplicates'
         end
+
         super(node_array)
       end
 
@@ -27,6 +34,8 @@ module SocialNetwork
       # @param other [Node] The other instance to to be added to this list
       # @return [NodeList] The list plus the newly added {Node}
       def <<(other)
+        fail InvalidNodeInsertError, 'Node is invalid' unless valid?(other)
+
         if include?(other)
           fail DuplicateNodeError, 'Node ID  alread exists in NodeList'
         end
@@ -35,31 +44,48 @@ module SocialNetwork
 
       # Adds multiple other {Node nodes} to this instance of {NodeList}. Raises
       # a {DuplicateNodeError} if one of these nodes is already in this list.
+      # Raises {InvalidNodeInsertError} if one of the given nodes is not of
+      # class {Node}.
       # @param others [Node] Other instances of {Node} to be added to this list
       # @return [NodeList] The list plus the newly added {Node nodes}
       def push(*others)
-        fail DuplicateNodeError, 'Node Exists' if others.any? do |other|
-          self.include? other
-        end
+        qualify_for_insertion?(others)
         super
       end
 
       # Adds multiple other {Node nodes} to this instance of {NodeList}. Raises
       # a {DuplicateNodeError} if one of these nodes is already in this list.
+      # Raises {InvalidNodeInsertError} if one of the given nodes is not of
+      # class {Node}.
       # Difference to #push is, that this method basically prepends the other
       # instances of {Node} to this list.
       # @param others [Node] Other instances of {Node} to be added to this list
       # @return [NodeList] The list plus the newly added {Node nodes}
       def unshift(*others)
-        fail DuplicateNodeError, 'Node Exists' if others.any? do |other|
-          self.include? other
-        end
+        qualify_for_insertion?(others)
         super
+      end
+
+      private
+
+      def valid?(node)
+        node.class == SocialNetwork::Node
+      end
+
+      def qualify_for_insertion?(others)
+        others.each do |o|
+          fail InvalidNodeInsertError, 'cant add Invalid node' unless valid?(o)
+          fail DuplicateNodeError, 'Node already present' if include?(o)
+        end
       end
     end
 
     # Exception that is raised once you've tried to add one already existing
     # {Node} to a {NodeList}. Basically uniqueness is tried to be enforced.
     class DuplicateNodeError < Exception; end
+
+    # Exception that is raised once you've tried to add one already existing
+    # {Node} to a {NodeList}. Basically uniqueness is tried to be enforced.
+    class InvalidNodeInsertError < Exception; end
   end
 end

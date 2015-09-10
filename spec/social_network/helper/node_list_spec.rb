@@ -7,6 +7,7 @@ module SocialNetwork
       let(:node2) { SocialNetwork::Node.new('testid2', 't1', 'l3') }
       let(:node3) { SocialNetwork::Node.new('testid3', 't1', 'l3') }
       let(:node4) { SocialNetwork::Node.new('testid4', 't1', 'l3') }
+      let(:invalid_node) { nil }
 
       subject { NodeList.new([node1, node2]) }
 
@@ -21,6 +22,11 @@ module SocialNetwork
       it 'prevents duplicate nodes on initialization' do
         expect { NodeList.new([node1, node2, node1_dup]) }
           .to raise_error DuplicateNodeError
+      end
+
+      it 'prevents insertion of something different than Node' do
+        expect { NodeList.new([node1, invalid_node, node2]) }
+          .to raise_error InvalidNodeInsertError
       end
 
       context '#include?' do
@@ -40,6 +46,10 @@ module SocialNetwork
           it 'prevents adding a duplicate node' do
             expect { subject << node1_dup }.to raise_error DuplicateNodeError
           end
+          it 'prevents insertion of something different than Node' do
+            expect { subject << invalid_node }
+              .to raise_error InvalidNodeInsertError
+          end
         end
         context '#push' do
           it 'adds non duplicate node to node list' do
@@ -48,6 +58,10 @@ module SocialNetwork
           end
           it 'prevents adding a duplicate node' do
             expect { subject.push(node1_dup) }.to raise_error DuplicateNodeError
+          end
+          it 'prevents insertion of something different than Node' do
+            expect { subject.push([node1, invalid_node, node2]) }
+              .to raise_error InvalidNodeInsertError
           end
         end
         context '#unshift' do
@@ -58,6 +72,10 @@ module SocialNetwork
           it 'prevents adding a duplicate node' do
             expect { subject.unshift(node1_dup) }
               .to raise_error DuplicateNodeError
+          end
+          it 'prevents insertion of something different than Node' do
+            expect { subject.unshift([node1, invalid_node, node2]) }
+              .to raise_error InvalidNodeInsertError
           end
         end
       end
