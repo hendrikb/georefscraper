@@ -11,18 +11,11 @@ namespace :lombardi_graphml do
   namespace :convert_to do
     desc 'Convert lombardi GraphML representation to DOT graph file format'
     task :dot, [:graphml, :name] do |_t, args|
-      sn = SocialNetwork::Parser::GraphML.parse(
+      social_network = SocialNetwork::Parser::GraphML.parse(
         File.new(args[:graphml]), args[:name])
 
-      puts "graph #{sn.name} {"
-      sn.nodes.each do |node|
-        puts "\tn#{node.id} [label=\"#{node.label.delete('"')}\"];"
-      end
-      sn.edges.each do |edge|
-        puts "\tn#{edge.source.id} -- n#{edge.target.id};"
-      end
-      puts '}  // drop this code into a graphviz tool, like so:'
-      puts '   //   dot -Tpng -ograph.png test.dot'
+      SocialNetwork::Converter::DOT::Parser.new(social_network,
+                                                overwrite_name: args[:name])
     end
   end
 end

@@ -1,0 +1,51 @@
+module SocialNetwork
+  # Holds classes, that are able to convert social networks to other formats
+  # (e.g. DOT file format)
+  module Converter
+    # Module providing static method #convert to convert social networks to
+    # {http://www.graphviz.org/ graphviz'} DOT file format
+    module Dot
+      # Class providing functionality to convert social networks to GraphML.
+      # It'srecommended to not use it directly. Use
+      # #convert instead
+      class Converter
+        # param social_network [SocialNetwork::Base] a social network to convert
+        def initialize(social_network)
+          @sn = social_network
+        end
+
+        # Runs the convert process towards a DOT file output
+        # @return [String} A string representation of a social network in DOT
+        def convert
+          @dot = "graph #{@sn.name} {\n"
+          write_nodes
+          write_edges
+          @dot << "}  // drop this code into a graphviz tool, like so:\n"
+          @dot << "   //   dot -Tpng -ograph.png test.dot\n"
+        end
+
+        private
+
+        def write_nodes
+          @sn.nodes.each do |node|
+            @dot << "\t\"#{node.id}\" [label=\"#{node.label.delete('"')}\"];\n"
+          end
+        end
+
+        def write_edges
+          @sn.edges.each do |edge|
+            @dot << "\t\"#{edge.source.id}\" -- \"#{edge.target.id}\";\n"
+          end
+        end
+      end
+
+      # Converts the given social network to the DOT file format
+      # @param social_network [SocialNetwork::Base] A Network to convert to DOT
+      # @param _options [Hash] Currently unused options
+      # @return [String] A string representation of the Social network in DOT
+      def self.convert(social_network, _options = {})
+        Converter.new(social_network).convert
+      end
+    end
+  end
+end
