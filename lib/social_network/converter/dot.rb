@@ -19,7 +19,7 @@ module SocialNetwork
         def convert
           @dot = "graph \"#{@sn.name.delete('"')}\" {\n"
           write_nodes
-          write_edges
+          write_relationships
           @dot << "}  // drop this code into a graphviz tool, like so:\n"
           @dot << "   //   dot -Tpng -ograph.png test.dot\n"
         end
@@ -32,9 +32,10 @@ module SocialNetwork
           end
         end
 
-        def write_edges
-          @sn.edges.each do |edge|
-            @dot << "\t\"#{edge.source.id}\" -- \"#{edge.target.id}\";\n"
+        def write_relationships
+          @sn.relationships.each do |relationship|
+            @dot << "\t\"#{relationship.source.id}\" -- " \
+              "\"#{relationship.target.id}\";\n"
           end
         end
       end

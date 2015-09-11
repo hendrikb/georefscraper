@@ -20,7 +20,7 @@ module SocialNetwork
           @network_id = graph_node.attributes['id'] if @network_id.nil?
           @network = SocialNetwork::Base.new(@network_id)
           parse_nodes
-          parse_edges
+          parse_relationships
           @network
         end
 
@@ -44,13 +44,14 @@ module SocialNetwork
           name
         end
 
-        def parse_edges
-          @doc.elements.each('*/graph/edge') do |edge|
-            source = @nodes[edge.attributes['source']]
-            target = @nodes[edge.attributes['target']]
-            type =  edge.get_text('data[@key="type"]')
-            edge_object = SocialNetwork::Edge.new source, target, type
-            @network.push_edge edge_object
+        def parse_relationships
+          @doc.elements.each('*/graph/edge') do |relationship|
+            source = @nodes[relationship.attributes['source']]
+            target = @nodes[relationship.attributes['target']]
+            type = relationship.get_text('data[@key="type"]')
+            relationship_object = SocialNetwork::Relationship.new(
+              source, target, type)
+            @network.push_relationship relationship_object
           end
         end
       end

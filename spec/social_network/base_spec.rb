@@ -47,29 +47,30 @@ module SocialNetwork
         end
       end
 
-      context 'edge handling' do
-        it 'creates object with an edges array' do
-          expect(subject.edges).to be_kind_of SocialNetwork::Helper::EdgeList
+      context 'relationship handling' do
+        it 'creates object with an relationships array' do
+          expect(subject.relationships)
+            .to be_kind_of SocialNetwork::Helper::RelationshipList
         end
 
-        it 'has frozen edges' do
-          expect(subject.edges).to be_frozen
+        it 'has frozen relationships' do
+          expect(subject.relationships).to be_frozen
         end
 
-        it 'it raises nicely when trying to modify a frozen EdgeList' do
-          exc_msg = "can't modify frozen SocialNetwork::Helper::EdgeList"
+        it 'it raises nicely when trying to modify a frozen RelationshipList' do
+          msg = "can't modify frozen SocialNetwork::Helper::RelationshipList"
           n1 = Node.new('n1', 't1', 'l1')
           n2 = Node.new('n2', 't2', 'l2')
-          expect { subject.edges << (Edge.new(n1, n2, 't1')) }
+          expect { subject.relationships << (Relationship.new(n1, n2, 't1')) }
             .to raise_error(RuntimeError,
-                            exc_msg)
+                            msg)
         end
 
-        it 'enables to push single edge' do
+        it 'enables to push single relationship' do
           n1 = Node.new('n1', 't1', 'l1')
           n2 = Node.new('n1', 't1', 'l1')
-          expect { subject.push_edge(Edge.new(n1, n2, 't1')) }
-            .to change { subject.edges.length }.by 1
+          expect { subject.push_relationship(Relationship.new(n1, n2, 't1')) }
+            .to change { subject.relationships.length }.by 1
         end
 
         it 'raises if trying to push duplicate nodes' do
@@ -77,10 +78,10 @@ module SocialNetwork
           n2 = Node.new('n2', 't1', 'l2')
           subject.push_node(n1)
           subject.push_node(n2)
-          subject.push_edge(Edge.new(n1, n2, 't1'))
-          edge1_dup = Edge.new(n1, n2, 't1')
-          expect { subject.push_edge(edge1_dup) }
-            .to raise_error Helper::DuplicateEdgeError
+          subject.push_relationship(Relationship.new(n1, n2, 't1'))
+          relationship1_dup = Relationship.new(n1, n2, 't1')
+          expect { subject.push_relationship(relationship1_dup) }
+            .to raise_error Helper::DuplicateRelationshipError
         end
       end
     end

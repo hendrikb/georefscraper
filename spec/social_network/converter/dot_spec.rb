@@ -5,16 +5,19 @@ describe SocialNetwork::Converter::Dot do
   let(:mum) { SocialNetwork::Node.new('n2', 'tP', 'Mum') }
   let(:dad) { SocialNetwork::Node.new('n3', 'tP', 'Dad') }
 
-  let(:edge_married) { SocialNetwork::Edge.new(mum, dad, 'married') }
-  let(:edge_f_son) { SocialNetwork::Edge.new(dad, me, 'son') }
-  let(:edge_m_son) { SocialNetwork::Edge.new(mum, me, 'son') }
+  let(:relationship_married) do
+    SocialNetwork::Relationship.new(mum, dad,
+                                    'married')
+  end
+  let(:relationship_f_son) { SocialNetwork::Relationship.new(dad, me, 'son') }
+  let(:relationship_m_son) { SocialNetwork::Relationship.new(mum, me, 'son') }
 
   let(:network) do
     node_list = SocialNetwork::Helper::NodeList.new([me, mum, dad])
-    edge_list = SocialNetwork::Helper::EdgeList.new(
-      [edge_married, edge_f_son, edge_m_son])
+    relationship_list = SocialNetwork::Helper::RelationshipList.new(
+      [relationship_married, relationship_f_son, relationship_m_son])
 
-    SocialNetwork::Base.new('The "Test" Family', node_list, edge_list)
+    SocialNetwork::Base.new('The "Test" Family', node_list, relationship_list)
   end
 
   context 'conversion' do

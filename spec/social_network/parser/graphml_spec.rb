@@ -10,16 +10,18 @@ describe SocialNetwork::Parser::GraphML do
   let(:equiv_n4) { SocialNetwork::Node.new('n4', 'TNp', 'Quasha') }
   let(:equiv_n5) { SocialNetwork::Node.new('n5', 'TNp', 'TestCannonical') }
 
-  let(:equiv_edge12) { SocialNetwork::Edge.new(equiv_n1, equiv_n2, 'TEi') }
-  let(:equiv_edge24) { SocialNetwork::Edge.new(equiv_n2, equiv_n4, 'TEf') }
-  let(:equiv_edge25) { SocialNetwork::Edge.new(equiv_n2, equiv_n5, 'TEf') }
-
   let(:equiv_network_nodes) do
     [equiv_n1, equiv_n2, equiv_n3, equiv_n4, equiv_n5]
   end
-  let(:equiv_network_edges) { [equiv_edge12, equiv_edge24, equiv_edge25] }
+  let(:equiv_network_rs) do
+    [
+      SocialNetwork::Relationship.new(equiv_n1, equiv_n2, 'TEi'),
+      SocialNetwork::Relationship.new(equiv_n2, equiv_n4, 'TEf'),
+      SocialNetwork::Relationship.new(equiv_n2, equiv_n5, 'TEf')
+    ]
+  end
   let(:equiv_network) do
-    SocialNetwork::Base.new('TestNet', equiv_network_nodes, equiv_network_edges)
+    SocialNetwork::Base.new('TestNet', equiv_network_nodes, equiv_network_rs)
   end
 
   it 'constructs a proper SocialNetwork::Base object' do
@@ -40,10 +42,9 @@ describe SocialNetwork::Parser::GraphML do
       expect(sn.name).to eq 'other_id'
     end
   end
-  context 'network edges' do
-    it 'assigns edges' do
-      expect(social_network.edges).to eq [equiv_edge12, equiv_edge24,
-                                          equiv_edge25]
+  context 'network relationships' do
+    it 'assigns relationships' do
+      expect(social_network.relationships).to eq equiv_network_rs
     end
   end
 
