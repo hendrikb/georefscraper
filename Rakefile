@@ -14,8 +14,8 @@ namespace :lombardi_graphml do
       social_network = SocialNetwork::Parser::GraphML.parse(
         File.new(args[:graphml]), args[:name])
 
-      SocialNetwork::Converter::DOT::Parser.new(social_network,
-                                                overwrite_name: args[:name])
+      puts SocialNetwork::Converter::Dot
+        .convert(social_network, overwrite_name: args[:name])
     end
   end
 end
