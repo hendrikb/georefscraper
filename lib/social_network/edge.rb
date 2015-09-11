@@ -4,6 +4,10 @@ module SocialNetwork
   class Edge
     attr_accessor :source, :target, :type
 
+    # Create a new instance of a relationship between two actors ({Node nodes}).
+    # @param source [Node] One actor that is in a relationship with another
+    # @param target [Node] Another actor that is in a relationship with one
+    # @param type [Object] Some relationship type specification, might be String
     def initialize(source, target, type = nil)
       if source.class != Node || target.class != Node
         fail EdgeConnectingError, 'Provide Node as source and target'

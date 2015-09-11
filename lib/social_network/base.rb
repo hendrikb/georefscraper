@@ -6,6 +6,13 @@ module SocialNetwork
   class Base
     attr_accessor :name
 
+    # Create a new instance of {Base}, which basically represents a social
+    # network with actors (instances of {Node}) in a {Helper::NodeList} and
+    # relationships between them, instances of {Edge} in an {Helper::EdgeList}
+    # @param name [String] A human readable name, e.g. "Family"
+    # @param nodes [NodeList] List of actors in the social network
+    # @param edges [EdgeList] List of relationships between the actors
+    # @return [Base] Instance of a social network
     def initialize(name,
                    nodes = Helper::NodeList.new([]),
                    edges = Helper::EdgeList.new([]))
