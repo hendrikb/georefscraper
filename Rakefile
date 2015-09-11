@@ -4,8 +4,9 @@ require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 
 namespace :lombardi_graphml do
-  desc 'Import social network lombardi graphml [proof, not working]'
-  task :import, [:graphml, :name] do |_t, args|
+  desc 'Validate social network lombardi graphml. Look for exceptions in files!'
+  task :validate, [:graphml, :name] do |_t, args|
+    puts "Validating #{args[:graphml]}"
     SocialNetwork::Parser::GraphML.parse(File.new(args[:graphml]), args[:name])
   end
   namespace :convert_to do
