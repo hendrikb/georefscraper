@@ -4,7 +4,7 @@ module SocialNetwork
   # Represents a social network with all its {Actor Actors} (actors) and
   # {Relationship Relationships} (relationships between actors)
   class Base
-    attr_accessor :name
+    attr_accessor :name, :options
 
     # Create a new instance of {Base}, which basically represents a social
     # network with actors (instances of {Actor}) in a {Helper::ActorList} and
@@ -13,14 +13,17 @@ module SocialNetwork
     # @param name [String] A human readable name, e.g. "Family"
     # @param actors [ActorList] List of actors in the social network
     # @param relationships [RelationshipList] Relationships between actors
+    # @param options [Hash] Options hash, currently unused
     # @return [Base] Instance of a social network
     def initialize(name,
                    actors = Helper::ActorList.new([]),
-                   relationships = Helper::RelationshipList.new([]))
+                   relationships = Helper::RelationshipList.new([]),
+                   options = {})
       @name = name || fail(NameMissingError,
                            'Please provide a name for the social network')
       @actors = actors
       @relationships = relationships
+      @options = options
     end
 
     # @return [SocialNetwork::Helper::ActorList] List of actors in this network

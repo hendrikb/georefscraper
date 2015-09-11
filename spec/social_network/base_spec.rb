@@ -4,8 +4,13 @@ module SocialNetwork
   describe Base do
     context '.initialize' do
       subject { SocialNetwork::Base.new('testing') }
-      it 'creates an SocialNetwork::Base' do
+      it 'creates a SocialNetwork::Base' do
         expect(subject).to be_kind_of SocialNetwork::Base
+      end
+
+      it 'takes options' do
+        subject = SocialNetwork::Base.new('testing', [], [], test_option: true)
+        expect(subject.options[:test_option]).to be true
       end
 
       it 'enforces name for the social network' do
