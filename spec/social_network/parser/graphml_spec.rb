@@ -8,14 +8,16 @@ describe SocialNetwork::Parser::GraphML do
   let(:equiv_n2) { SocialNetwork::Node.new('n2', 'TNi', 'Ohio') }
   let(:equiv_n3) { SocialNetwork::Node.new('n3', 'TNp', 'Faulkner') }
   let(:equiv_n4) { SocialNetwork::Node.new('n4', 'TNp', 'Quasha') }
+  let(:equiv_n5) { SocialNetwork::Node.new('n5', 'TNp', 'TestCannonical') }
 
   let(:equiv_edge12) { SocialNetwork::Edge.new(equiv_n1, equiv_n2, 'TEi') }
   let(:equiv_edge24) { SocialNetwork::Edge.new(equiv_n2, equiv_n4, 'TEf') }
+  let(:equiv_edge25) { SocialNetwork::Edge.new(equiv_n2, equiv_n5, 'TEf') }
 
   let(:equiv_network_nodes) do
-    [equiv_n1, equiv_n2, equiv_n3, equiv_n4]
+    [equiv_n1, equiv_n2, equiv_n3, equiv_n4, equiv_n5]
   end
-  let(:equiv_network_edges) { [equiv_edge12, equiv_edge24] }
+  let(:equiv_network_edges) { [equiv_edge12, equiv_edge24, equiv_edge25] }
   let(:equiv_network) do
     SocialNetwork::Base.new('TestNet', equiv_network_nodes, equiv_network_edges)
   end
@@ -40,14 +42,15 @@ describe SocialNetwork::Parser::GraphML do
   end
   context 'network edges' do
     it 'assigns edges' do
-      expect(social_network.edges).to eq [equiv_edge12, equiv_edge24]
+      expect(social_network.edges).to eq [equiv_edge12, equiv_edge24,
+                                          equiv_edge25]
     end
   end
 
   context 'network nodes' do
     it 'assigns nodes' do
       expect(social_network.nodes)
-        .to eq [equiv_n1, equiv_n2, equiv_n3, equiv_n4]
+        .to eq [equiv_n1, equiv_n2, equiv_n3, equiv_n4, equiv_n5]
     end
 
     it 'ensures node label is a string' do
@@ -55,9 +58,11 @@ describe SocialNetwork::Parser::GraphML do
     end
 
     %i(id type label).each do |field|
-      it "parses node #{field}" do
-        expect(social_network.nodes.first.send(field))
-          .to eq equiv_n1.send(field)
+      it "assures equality for #{field} field on parsed node for each node" do
+        equiv_network_nodes.each_with_index do |_, i|
+          expect(social_network.nodes[i].send(field))
+            .to eq(equiv_network_nodes[i].send(field))
+        end
       end
     end
   end

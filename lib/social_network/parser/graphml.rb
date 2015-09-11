@@ -30,12 +30,18 @@ module SocialNetwork
           @nodes = {}
           @doc.elements.each('*/graph/node') do |node|
             id = node.attributes['id']
-            type =  node.get_text('data[@key="type"]')
-            name =  node.get_text('data[@key="name"]').to_s
+            type = node.get_text('data[@key="type"]')
+            name = parse_name_for(node)
             node_object = SocialNetwork::Node.new id, type, name
             @nodes[id] = node_object
             @network.push_node node_object
           end
+        end
+
+        def parse_name_for(node)
+          name = node.get_text('data[@key="name"]').to_s
+          name = node.get_text('data[@key="canonicalName"]').to_s if name.empty?
+          name
         end
 
         def parse_edges
