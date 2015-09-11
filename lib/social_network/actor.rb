@@ -1,7 +1,8 @@
 module SocialNetwork
   # Represents some kind of actor in a social network
   class Actor
-    attr_accessor :id, :type, :label
+    attr_accessor :id, :type
+    attr_reader :label
 
     # @param id [Object] A unique id within one social network. i.e. a String
     # @param type [Object] Some identifier for this type of actor, i.e. a String
@@ -13,7 +14,7 @@ module SocialNetwork
 
       @id = id.freeze
       @type = type
-      @label = label
+      @label = label=(label)
     end
 
     # Tells whether this instance of a {Actor} is equal to another. Equality is
@@ -30,7 +31,18 @@ module SocialNetwork
       "#{self.class}[#{id}] \"#{label}\""
     end
 
+    def label=(label)
+      @label = sanitize(label)
+    end
+
     alias_method :to_s, :inspect
+
+    private
+
+    def sanitize label
+      label = SocialNetwork::Helper::ActorLabelSanitizer.sanitize(label)
+      label
+    end
   end
 
   # This Exceptio gets raised if you've tried to initialize a {Actor} with a nil

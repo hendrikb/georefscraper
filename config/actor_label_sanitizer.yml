@@ -1,0 +1,8 @@
+---
+replacements:
+  # use https://en.wikipedia.org/wiki/IETF_language_tag here!
+  en-US: &english
+    "U.K.": "United Kingdom"
+    "Gvmt.?": "Government"
+  en-UK: *english
+

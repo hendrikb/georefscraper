@@ -10,11 +10,15 @@ module SocialNetwork
       it 'sets the actor id' do
         expect(subject.id).to eql 'testid'
       end
-      it 'failes if empty actor id is given' do
+
+      it 'sets the actor label' do
+        expect(subject.label).to eql 'testlabel'
+      end
+      it 'fails if empty actor id is given' do
         expect { SocialNetwork::Actor.new('', 't', 't') }
           .to raise_error SocialNetwork::ActorIdInvalidError
       end
-      it 'failes if nil actor id is given' do
+      it 'fails if nil actor id is given' do
         expect { SocialNetwork::Actor.new(nil, 't', 't') }
           .to raise_error SocialNetwork::ActorIdInvalidError
       end
@@ -26,6 +30,10 @@ module SocialNetwork
       end
       it 'sets the actor label' do
         expect(subject.label).to eql 'testlabel'
+      end
+      it 'sanitizes the label' do
+        subject.label= 'Test U.K. entry'
+        expect(subject.label).to eql 'Test United Kingdom entry'
       end
     end
 
