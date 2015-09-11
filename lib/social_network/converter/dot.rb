@@ -17,7 +17,7 @@ module SocialNetwork
         # Runs the convert process towards a DOT file output
         # @return [String} A string representation of a social network in DOT
         def convert
-          @dot = "graph #{@sn.name} {\n"
+          @dot = "graph \"#{@sn.name.delete('"')}\" {\n"
           write_nodes
           write_edges
           @dot << "}  // drop this code into a graphviz tool, like so:\n"

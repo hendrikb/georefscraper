@@ -14,7 +14,7 @@ describe SocialNetwork::Converter::Dot do
     edge_list = SocialNetwork::Helper::EdgeList.new(
       [edge_married, edge_f_son, edge_m_son])
 
-    SocialNetwork::Base.new('MyParents', node_list, edge_list)
+    SocialNetwork::Base.new('The "Test" Family', node_list, edge_list)
   end
 
   context 'conversion' do
@@ -24,7 +24,7 @@ describe SocialNetwork::Converter::Dot do
     end
     it 'converts stuff to dot' do
       ref_dot_code = <<EOF
-graph MyParents {
+graph \"The Test Family\" {
 \t"n1" [label="Hendrik"];
 \t"n2" [label="Mum"];
 \t"n3" [label="Dad"];
