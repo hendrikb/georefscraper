@@ -18,7 +18,7 @@ module SocialNetwork
         # @return [String} A string representation of a social network in DOT
         def convert
           @dot = "graph \"#{@sn.name.delete('"')}\" {\n"
-          write_nodes
+          write_actors
           write_relationships
           @dot << "}  // drop this code into a graphviz tool, like so:\n"
           @dot << "   //   dot -Tpng -ograph.png test.dot\n"
@@ -26,9 +26,10 @@ module SocialNetwork
 
         private
 
-        def write_nodes
-          @sn.nodes.each do |node|
-            @dot << "\t\"#{node.id}\" [label=\"#{node.label.delete('"')}\"];\n"
+        def write_actors
+          @sn.actors.each do |actor|
+            @dot << "\t\"#{actor.id}\" " \
+              "[label=\"#{actor.label.delete('"')}\"];\n"
           end
         end
 

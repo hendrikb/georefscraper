@@ -4,13 +4,13 @@ describe SocialNetwork::Parser::GraphML do
   let(:graphml_file) { File.new(File.join('spec', 'test_ref_tiny.graphml')) }
   let(:social_network) { SocialNetwork::Parser::GraphML.parse(graphml_file) }
 
-  let(:equiv_n1) { SocialNetwork::Node.new('n1', 'TNi', 'vonRoll') }
-  let(:equiv_n2) { SocialNetwork::Node.new('n2', 'TNi', 'Ohio') }
-  let(:equiv_n3) { SocialNetwork::Node.new('n3', 'TNp', 'Faulkner') }
-  let(:equiv_n4) { SocialNetwork::Node.new('n4', 'TNp', 'Quasha') }
-  let(:equiv_n5) { SocialNetwork::Node.new('n5', 'TNp', 'TestCannonical') }
+  let(:equiv_n1) { SocialNetwork::Actor.new('n1', 'TNi', 'vonRoll') }
+  let(:equiv_n2) { SocialNetwork::Actor.new('n2', 'TNi', 'Ohio') }
+  let(:equiv_n3) { SocialNetwork::Actor.new('n3', 'TNp', 'Faulkner') }
+  let(:equiv_n4) { SocialNetwork::Actor.new('n4', 'TNp', 'Quasha') }
+  let(:equiv_n5) { SocialNetwork::Actor.new('n5', 'TNp', 'TestCannonical') }
 
-  let(:equiv_network_nodes) do
+  let(:equiv_network_actors) do
     [equiv_n1, equiv_n2, equiv_n3, equiv_n4, equiv_n5]
   end
   let(:equiv_network_rs) do
@@ -21,7 +21,7 @@ describe SocialNetwork::Parser::GraphML do
     ]
   end
   let(:equiv_network) do
-    SocialNetwork::Base.new('TestNet', equiv_network_nodes, equiv_network_rs)
+    SocialNetwork::Base.new('TestNet', equiv_network_actors, equiv_network_rs)
   end
 
   it 'constructs a proper SocialNetwork::Base object' do
@@ -48,21 +48,21 @@ describe SocialNetwork::Parser::GraphML do
     end
   end
 
-  context 'network nodes' do
-    it 'assigns nodes' do
-      expect(social_network.nodes)
+  context 'network actors' do
+    it 'assigns actors' do
+      expect(social_network.actors)
         .to eq [equiv_n1, equiv_n2, equiv_n3, equiv_n4, equiv_n5]
     end
 
-    it 'ensures node label is a string' do
-      expect(social_network.nodes.first.label).to be_kind_of String
+    it 'ensures actor label is a string' do
+      expect(social_network.actors.first.label).to be_kind_of String
     end
 
     %i(id type label).each do |field|
-      it "assures equality for #{field} field on parsed node for each node" do
-        equiv_network_nodes.each_with_index do |_, i|
-          expect(social_network.nodes[i].send(field))
-            .to eq(equiv_network_nodes[i].send(field))
+      it "assures equality for #{field} field on parsed actor for each actor" do
+        equiv_network_actors.each_with_index do |_, i|
+          expect(social_network.actors[i].send(field))
+            .to eq(equiv_network_actors[i].send(field))
         end
       end
     end

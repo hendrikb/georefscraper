@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe SocialNetwork::Converter::Dot do
-  let(:me) { SocialNetwork::Node.new('n1', 'tP', 'Hendrik') }
-  let(:mum) { SocialNetwork::Node.new('n2', 'tP', 'Mum') }
-  let(:dad) { SocialNetwork::Node.new('n3', 'tP', 'Dad') }
+  let(:me) { SocialNetwork::Actor.new('n1', 'tP', 'Hendrik') }
+  let(:mum) { SocialNetwork::Actor.new('n2', 'tP', 'Mum') }
+  let(:dad) { SocialNetwork::Actor.new('n3', 'tP', 'Dad') }
 
   let(:relationship_married) do
     SocialNetwork::Relationship.new(mum, dad,
@@ -13,11 +13,11 @@ describe SocialNetwork::Converter::Dot do
   let(:relationship_m_son) { SocialNetwork::Relationship.new(mum, me, 'son') }
 
   let(:network) do
-    node_list = SocialNetwork::Helper::NodeList.new([me, mum, dad])
+    actor_list = SocialNetwork::Helper::ActorList.new([me, mum, dad])
     relationship_list = SocialNetwork::Helper::RelationshipList.new(
       [relationship_married, relationship_f_son, relationship_m_son])
 
-    SocialNetwork::Base.new('The "Test" Family', node_list, relationship_list)
+    SocialNetwork::Base.new('The "Test" Family', actor_list, relationship_list)
   end
 
   context 'conversion' do

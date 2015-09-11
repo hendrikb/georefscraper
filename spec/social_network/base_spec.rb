@@ -16,34 +16,34 @@ module SocialNetwork
         expect(subject.name).to eql('testing')
       end
 
-      context 'Node handling' do
-        it 'creates object with an nodes array' do
-          expect(subject.nodes).to be_kind_of SocialNetwork::Helper::NodeList
+      context 'Actor handling' do
+        it 'creates object with an actors array' do
+          expect(subject.actors).to be_kind_of SocialNetwork::Helper::ActorList
         end
 
-        it 'has frozen nodes' do
-          expect(subject.nodes).to be_frozen
+        it 'has frozen actors' do
+          expect(subject.actors).to be_frozen
         end
 
-        it 'it raises nicely when trying to modify a frozen NodeList' do
-          exc_msg  = "can't modify frozen SocialNetwork::Helper::NodeList"
-          expect { subject.nodes << (Node.new('x', 'y', 'z')) }
+        it 'it raises nicely when trying to modify a frozen ActorList' do
+          exc_msg  = "can't modify frozen SocialNetwork::Helper::ActorList"
+          expect { subject.actors << (Actor.new('x', 'y', 'z')) }
             .to raise_error(RuntimeError,
                             exc_msg)
         end
 
-        it 'enables to push single nodes' do
-          n1 = Node.new('n1', 't1', 'l1')
-          expect { subject.push_node(n1) }
-            .to change { subject.nodes.length }.by 1
+        it 'enables to push single actors' do
+          n1 = Actor.new('n1', 't1', 'l1')
+          expect { subject.push_actor(n1) }
+            .to change { subject.actors.length }.by 1
         end
 
-        it 'raises if trying to push duplicate nodes' do
-          n1 = Node.new('n1', 't1', 'l1')
-          n1_dup = Node.new('n1', 't1', 'l1')
-          subject.push_node(n1)
-          expect { subject.push_node(n1_dup) }
-            .to raise_error Helper::DuplicateNodeError
+        it 'raises if trying to push duplicate actors' do
+          n1 = Actor.new('n1', 't1', 'l1')
+          n1_dup = Actor.new('n1', 't1', 'l1')
+          subject.push_actor(n1)
+          expect { subject.push_actor(n1_dup) }
+            .to raise_error Helper::DuplicateActorError
         end
       end
 
@@ -59,25 +59,25 @@ module SocialNetwork
 
         it 'it raises nicely when trying to modify a frozen RelationshipList' do
           msg = "can't modify frozen SocialNetwork::Helper::RelationshipList"
-          n1 = Node.new('n1', 't1', 'l1')
-          n2 = Node.new('n2', 't2', 'l2')
+          n1 = Actor.new('n1', 't1', 'l1')
+          n2 = Actor.new('n2', 't2', 'l2')
           expect { subject.relationships << (Relationship.new(n1, n2, 't1')) }
             .to raise_error(RuntimeError,
                             msg)
         end
 
         it 'enables to push single relationship' do
-          n1 = Node.new('n1', 't1', 'l1')
-          n2 = Node.new('n1', 't1', 'l1')
+          n1 = Actor.new('n1', 't1', 'l1')
+          n2 = Actor.new('n1', 't1', 'l1')
           expect { subject.push_relationship(Relationship.new(n1, n2, 't1')) }
             .to change { subject.relationships.length }.by 1
         end
 
-        it 'raises if trying to push duplicate nodes' do
-          n1 = Node.new('n1', 't1', 'l1')
-          n2 = Node.new('n2', 't1', 'l2')
-          subject.push_node(n1)
-          subject.push_node(n2)
+        it 'raises if trying to push duplicate actors' do
+          n1 = Actor.new('n1', 't1', 'l1')
+          n2 = Actor.new('n2', 't1', 'l2')
+          subject.push_actor(n1)
+          subject.push_actor(n2)
           subject.push_relationship(Relationship.new(n1, n2, 't1'))
           relationship1_dup = Relationship.new(n1, n2, 't1')
           expect { subject.push_relationship(relationship1_dup) }

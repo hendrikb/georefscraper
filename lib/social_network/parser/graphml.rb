@@ -16,38 +16,38 @@ module SocialNetwork
 
         # @return [SocialNetwork::Base] instance that was parsed from GraphML
         def network
-          graph_node = @doc.root.elements['graph']
-          @network_id = graph_node.attributes['id'] if @network_id.nil?
+          graph_actor = @doc.root.elements['graph']
+          @network_id = graph_actor.attributes['id'] if @network_id.nil?
           @network = SocialNetwork::Base.new(@network_id)
-          parse_nodes
+          parse_actors
           parse_relationships
           @network
         end
 
         private
 
-        def parse_nodes
-          @nodes = {}
-          @doc.elements.each('*/graph/node') do |node|
-            id = node.attributes['id']
-            type = node.get_text('data[@key="type"]')
-            name = parse_name_for(node)
-            node_object = SocialNetwork::Node.new id, type, name
-            @nodes[id] = node_object
-            @network.push_node node_object
+        def parse_actors
+          @actors = {}
+          @doc.elements.each('*/graph/node') do |actor|
+            id = actor.attributes['id']
+            type = actor.get_text('data[@key="type"]')
+            name = parse_name_for(actor)
+            actor_object = SocialNetwork::Actor.new id, type, name
+            @actors[id] = actor_object
+            @network.push_actor actor_object
           end
         end
 
-        def parse_name_for(node)
-          name = node.get_text('data[@key="name"]').to_s
-          name = node.get_text('data[@key="canonicalName"]').to_s if name.empty?
-          name
+        def parse_name_for(actor)
+          n = actor.get_text('data[@key="name"]').to_s
+          n = actor.get_text('data[@key="canonicalName"]').to_s if n.empty?
+          n
         end
 
         def parse_relationships
           @doc.elements.each('*/graph/edge') do |relationship|
-            source = @nodes[relationship.attributes['source']]
-            target = @nodes[relationship.attributes['target']]
+            source = @actors[relationship.attributes['source']]
+            target = @actors[relationship.attributes['target']]
             type = relationship.get_text('data[@key="type"]')
             relationship_object = SocialNetwork::Relationship.new(
               source, target, type)

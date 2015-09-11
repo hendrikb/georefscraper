@@ -2,26 +2,26 @@ require 'spec_helper'
 module SocialNetwork
   module Helper
     describe RelationshipList do
-      let(:node1) { SocialNetwork::Node.new('testid1', 't1', 'l1') }
-      let(:node2) { SocialNetwork::Node.new('testid2', 't1', 'l2') }
-      let(:node3) { SocialNetwork::Node.new('testid3', 't1', 'l3') }
-      let(:node4) { SocialNetwork::Node.new('testid4', 't1', 'l4') }
+      let(:actor1) { SocialNetwork::Actor.new('testid1', 't1', 'l1') }
+      let(:actor2) { SocialNetwork::Actor.new('testid2', 't1', 'l2') }
+      let(:actor3) { SocialNetwork::Actor.new('testid3', 't1', 'l3') }
+      let(:actor4) { SocialNetwork::Actor.new('testid4', 't1', 'l4') }
 
       let(:rs12) do
-        SocialNetwork::Relationship.new(node1,
-                                        node2, 'te1')
+        SocialNetwork::Relationship.new(actor1,
+                                        actor2, 'te1')
       end
       let(:rs12_dup) do
-        SocialNetwork::Relationship.new(node1,
-                                        node2, 'te1')
+        SocialNetwork::Relationship.new(actor1,
+                                        actor2, 'te1')
       end
       let(:rs23) do
-        SocialNetwork::Relationship.new(node2,
-                                        node3, 'te1')
+        SocialNetwork::Relationship.new(actor2,
+                                        actor3, 'te1')
       end
       let(:rs34) do
-        SocialNetwork::Relationship.new(node3,
-                                        node4, 'te1')
+        SocialNetwork::Relationship.new(actor3,
+                                        actor4, 'te1')
       end
       let(:invalid_rs) { nil }
 
@@ -53,11 +53,11 @@ module SocialNetwork
       end
       context 'adding objects' do
         context '#<<' do
-          it 'adds non duplicate node to node list' do
+          it 'adds non duplicate actor to actor list' do
             expect(subject << rs23)
               .to eq RelationshipList.new([rs12, rs34, rs23])
           end
-          it 'prevents adding a duplicate node' do
+          it 'prevents adding a duplicate actor' do
             expect { subject << rs12_dup }
               .to raise_error DuplicateRelationshipError
           end
@@ -75,13 +75,13 @@ module SocialNetwork
             expect { subject.push(rs12_dup) }
               .to raise_error DuplicateRelationshipError
           end
-          it 'prevents insertion of something different than Node' do
+          it 'prevents insertion of something different than Actor' do
             expect { subject.push([rs23, invalid_rs]) }
               .to raise_error InvalidRelationshipInsertError
           end
         end
         context '#unshift' do
-          it 'adds non duplicate relationship to node list' do
+          it 'adds non duplicate relationship to actor list' do
             expect(subject.unshift(rs23))
               .to eq RelationshipList.new([rs23, rs12, rs34])
           end

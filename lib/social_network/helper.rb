@@ -1,4 +1,4 @@
-require_relative './helper/node_list'
+require_relative './helper/actor_list'
 require_relative './helper/relationship_list'
 
 module SocialNetwork

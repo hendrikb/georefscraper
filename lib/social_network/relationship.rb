@@ -1,16 +1,16 @@
 module SocialNetwork
-  # Defines a relationship between two {Node Nodes} in a social network. A
+  # Defines a relationship between two {Actor Actors} in a social network. A
   # relationship is defined by its {#source}, {#target} and an optional {#type}
   class Relationship
     attr_accessor :source, :target, :type
 
-    # Create a new instance of a relationship between two actors ({Node nodes}).
-    # @param source [Node] One actor that is in a relationship with another
-    # @param target [Node] Another actor that is in a relationship with one
+    # Create new instance of a {Relationship} between two {Actor actors}.
+    # @param source [Actor] One actor that is in a relationship with another
+    # @param target [Actor] Another actor that is in a relationship with one
     # @param type [Object] Some relationship type specification, might be String
     def initialize(source, target, type = nil)
-      if source.class != Node || target.class != Node
-        fail RelationshipConnectingError, 'Provide Node as source and target'
+      if source.class != Actor || target.class != Actor
+        fail RelationshipConnectingError, 'Provide Actor as source and target'
       end
 
       @source = source
@@ -20,7 +20,7 @@ module SocialNetwork
 
     # Tells, wether one {Relationship} is considered equal to another
     # relationship. Equality is given, if and only if the other relationship's
-    # source {Node}, the other relationship's target {Node} and the other
+    # source {Actor}, the other relationship's target {Actor} and the other
     # relationship's {#type} are considered equal to ours.
     # @param other [Relationship] The other relationship to compare this one to
     # @return [Boolean] true, if both relationships are considered the same
@@ -39,6 +39,6 @@ module SocialNetwork
   end
 
   # Exception that is thrown, if either {Relationship#source} or
-  # {Relationship#target} are not of type {Node} upon creating an {Relationship}
+  # {Relationship#target} are not of type {Actor} on creating an {Relationship}
   class RelationshipConnectingError < Exception; end
 end
