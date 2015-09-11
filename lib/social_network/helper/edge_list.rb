@@ -10,8 +10,11 @@ module SocialNetwork
       # Raises {InvalidEdgeInsertError} if one of the given edges is not of
       # class {Edge}.
       def initialize(edge_array)
-        if edge_array.any? { |e| !valid?(e) }
-          fail InvalidEdgeInsertError, 'Invalid Edge could not be inserted'
+        if edge_array.each do |e|
+          unless valid?(e)
+            fail InvalidEdgeInsertError, "Cannot insert invalid Edge #{e}"
+          end
+        end
         end
         super
       end
@@ -21,8 +24,8 @@ module SocialNetwork
       # @param other [Edge] The other edge instance to be added to this list
       # @return [EdgeList] The list plus the newly added {Edge}
       def <<(other)
-        fail InvalidEdgeInsertError, 'Edge is invalid' unless valid?(other)
-        fail DuplicateEdgeError, 'Edge is already present' if include?(other)
+        fail InvalidEdgeInsertError, "#{other} is no  Edge" unless valid?(other)
+        fail DuplicateEdgeError, "#{other} already present" if include?(other)
         super
       end
 
