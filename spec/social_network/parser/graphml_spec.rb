@@ -32,14 +32,22 @@ describe SocialNetwork::Parser::GraphML do
     expect(social_network).to eq equiv_network
   end
 
+  context 'parsing options' do
+    it 'allows overwriting network name' do
+      options = { network_name: 'other_name' }
+      sn = SocialNetwork::Parser::GraphML.parse(graphml_file, options)
+      expect(sn.name).to eq 'other_name'
+    end
+    it 'allows ommiting parsing of relationship edges' do
+      options = { ommit_relationships: true }
+      sn = SocialNetwork::Parser::GraphML.parse(graphml_file, options)
+      expect(sn.relationships).to eq []
+    end
+  end
+
   context 'network name' do
     it 'is parsed' do
       expect(social_network.name).to eq 'TestNet'
-    end
-
-    it 'can be overriden' do
-      sn = SocialNetwork::Parser::GraphML.parse(graphml_file, 'other_id')
-      expect(sn.name).to eq 'other_id'
     end
   end
   context 'network relationships' do

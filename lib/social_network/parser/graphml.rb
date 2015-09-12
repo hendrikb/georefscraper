@@ -7,9 +7,10 @@ module SocialNetwork
       # recommended to not use it directly. Use
       # SocialNetwork::Parser::GraphML.parse() instead
       class Parser
-        def initialize(graphml, overwrite_network_id)
+        def initialize(graphml, options = {})
           @graphml = graphml
-          @network_id = overwrite_network_id
+          @options = options
+          @network_id = options[:network_name]
 
           @doc = REXML::Document.new(@graphml)
         end
@@ -20,7 +21,7 @@ module SocialNetwork
           @network_id = graph_actor.attributes['id'] if @network_id.nil?
           @network = SocialNetwork::Base.new(@network_id)
           parse_actors
-          parse_relationships
+          parse_relationships unless @options[:ommit_relationships]
           @network
         end
 
@@ -61,9 +62,8 @@ module SocialNetwork
       # @return [SocialNetWork::Base] Social Network parsed from the GraphML
       # @param graphml [String] File name to a graphml file
       # @param overwrite_id [String] Optional new name for the social network
-      def self.parse(graphml, overwrite_id = nil)
-        SocialNetwork::Parser::GraphML::Parser.new(graphml, overwrite_id)
-          .network
+      def self.parse(graphml, options = {})
+        SocialNetwork::Parser::GraphML::Parser.new(graphml, options).network
       end
     end
   end
