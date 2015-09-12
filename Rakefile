@@ -10,7 +10,7 @@ namespace :lombardi_graphml do
     begin
       print "Validating #{args[:graphml]} ... "
       SocialNetwork::Parser::GraphML.parse(File.new(args[:graphml]), args[:name])
-    rescue Exception => e
+    rescue StandardError => e
       $stderr.puts "\nThe graphml #{args[:graphml]} couldn't be validated"
       $stderr.puts "The error while building up the structure was:\n\t#{e}"
       exit 1
