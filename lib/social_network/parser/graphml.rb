@@ -1,3 +1,5 @@
+require 'htmlentities'
+
 module SocialNetwork
   module Parser
     # Module providing static method parse() to parse social networks from
@@ -42,7 +44,7 @@ module SocialNetwork
         def parse_name_for(actor)
           n = actor.get_text('data[@key="name"]').to_s
           n = actor.get_text('data[@key="canonicalName"]').to_s if n.empty?
-          n
+          HTMLEntities.new.decode(n)
         end
 
         def parse_relationships

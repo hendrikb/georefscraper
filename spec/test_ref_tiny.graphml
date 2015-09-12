@@ -15,7 +15,7 @@
     </node>
     <node xmlns="" id="n3">
       <data key="type">TNp</data>
-      <data key="name">Faulkner</data>
+      <data key="name">Faulkner &amp; Test</data>
     </node>
     <node xmlns="" id="n4">
       <data key="type">TNp</data>

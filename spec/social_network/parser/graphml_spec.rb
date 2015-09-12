@@ -6,7 +6,7 @@ describe SocialNetwork::Parser::GraphML do
 
   let(:equiv_n1) { SocialNetwork::Actor.new('n1', 'TNi', 'vonRoll') }
   let(:equiv_n2) { SocialNetwork::Actor.new('n2', 'TNi', 'Ohio') }
-  let(:equiv_n3) { SocialNetwork::Actor.new('n3', 'TNp', 'Faulkner') }
+  let(:equiv_n3) { SocialNetwork::Actor.new('n3', 'TNp', 'Faulkner & Test') }
   let(:equiv_n4) { SocialNetwork::Actor.new('n4', 'TNp', 'Quasha') }
   let(:equiv_n5) { SocialNetwork::Actor.new('n5', 'TNp', 'TestCannonical') }
 
