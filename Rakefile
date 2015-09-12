@@ -9,7 +9,8 @@ namespace :lombardi_graphml do
   task :validate, [:graphml, :name] do |_t, args|
     begin
       print "Validating #{args[:graphml]} ... "
-      SocialNetwork::Parser::GraphML.parse(File.new(args[:graphml]), args[:name])
+      SocialNetwork::Parser::GraphML.parse(
+        File.new(args[:graphml]), args[:name])
     rescue StandardError => e
       $stderr.puts "\nThe graphml #{args[:graphml]} couldn't be validated"
       $stderr.puts "The error while building up the structure was:\n\t#{e}"
@@ -25,6 +26,12 @@ namespace :lombardi_graphml do
 
       puts SocialNetwork::Converter::Dot
         .convert(social_network, overwrite_name: args[:name])
+    end
+    desc 'Print out all Nodes from GraphML file'
+    task :node_list, [:graphml] do |_t, args|
+      social_network = SocialNetwork::Parser::GraphML.parse(
+        File.new(args[:graphml]), ommit_relationships: true)
+      puts SocialNetwork::Converter::NodeList .convert(social_network)
     end
   end
 end
