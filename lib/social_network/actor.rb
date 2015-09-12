@@ -14,7 +14,7 @@ module SocialNetwork
 
       @id = id.freeze
       @type = type
-      @label = label=(label)
+      @label = sanitize(label)
     end
 
     # Tells whether this instance of a {Actor} is equal to another. Equality is
@@ -39,7 +39,7 @@ module SocialNetwork
 
     private
 
-    def sanitize label
+    def sanitize(label)
       label = SocialNetwork::Helper::ActorLabelSanitizer.sanitize(label)
       label
     end
