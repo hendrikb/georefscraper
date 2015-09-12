@@ -1,12 +1,3 @@
-GIT
-  remote: git://github.com/colszowka/simplecov.git
-  revision: 0d85bd0e4e3eda4253c0b67b8ff0f1f74635e466
-  specs:
-    simplecov (0.10.0)
-      docile (~> 1.1.0)
-      json (~> 1.8)
-      simplecov-html (~> 0.10.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,13 +31,17 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
-    rubocop (0.34.0)
+    rubocop (0.34.1)
       astrolabe (~> 1.3)
       parser (>= 2.2.2.5, < 3.0)
       powerpack (~> 0.1)
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
     ruby-progressbar (1.7.5)
+    simplecov (0.10.0)
+      docile (~> 1.1.0)
+      json (~> 1.8)
+      simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
     slop (3.6.0)
     yard (0.8.7.6)
@@ -59,7 +54,7 @@ DEPENDENCIES
   rake
   rspec
   rubocop
-  simplecov!
+  simplecov
   yard
 
 BUNDLED WITH
