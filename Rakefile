@@ -1,4 +1,5 @@
 require_relative './lib/social_network'
+
 require 'yard'
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
@@ -6,8 +7,15 @@ require 'rubocop/rake_task'
 namespace :lombardi_graphml do
   desc 'Validate social network lombardi graphml. Look for exceptions in files!'
   task :validate, [:graphml, :name] do |_t, args|
-    puts "Validating #{args[:graphml]}"
-    SocialNetwork::Parser::GraphML.parse(File.new(args[:graphml]), args[:name])
+    begin
+      print "Validating #{args[:graphml]} ... "
+      SocialNetwork::Parser::GraphML.parse(File.new(args[:graphml]), args[:name])
+    rescue Exception => e
+      $stderr.puts "\nThe graphml #{args[:graphml]} couldn't be validated"
+      $stderr.puts "The error while building up the structure was:\n\t#{e}"
+      exit 1
+    end
+    puts 'OK'
   end
   namespace :convert_to do
     desc 'Convert lombardi GraphML representation to DOT graph file format'
