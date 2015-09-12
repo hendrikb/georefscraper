@@ -32,7 +32,7 @@ module SocialNetwork
         expect(subject.label).to eql 'testlabel'
       end
       it 'sanitizes the label' do
-        subject.label= 'Test U.K. entry'
+        subject.label = 'Test U.K. entry'
         expect(subject.label).to eql 'Test United Kingdom entry'
       end
     end
