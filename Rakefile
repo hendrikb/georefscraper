@@ -26,11 +26,11 @@ namespace :lombardi_graphml do
       puts SocialNetwork::Converter::Dot.convert(social_network)
     end
 
-    desc 'Print out all Nodes from GraphML file'
-    task :node_list, [:graphml] do |_t, args|
+    desc 'Print out all Actors from GraphML file'
+    task :actor_list, [:graphml] do |_t, args|
       social_network = SocialNetwork::Parser::GraphML.parse(
         File.new(args[:graphml]), ommit_relationships: true)
-      puts SocialNetwork::Converter::NodeList.convert(social_network)
+      puts SocialNetwork::Converter::ActorList.convert(social_network)
     end
   end
 end

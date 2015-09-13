@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe SocialNetwork::Converter::NodeList do
+describe SocialNetwork::Converter::ActorList do
   it 'responds to module method convert' do
-    expect(SocialNetwork::Converter::NodeList).to respond_to(:convert)
+    expect(SocialNetwork::Converter::ActorList).to respond_to(:convert)
       .with(2).arguments
   end
-  it 'returns only the nodes of the given network' do
+  it 'returns only the actors of the given network' do
     me = SocialNetwork::Actor.new('n1', 'tP', 'Hendrik')
     mum = SocialNetwork::Actor.new('n2', 'tP', 'Mum')
     dad = SocialNetwork::Actor.new('n3', 'tP', 'Dad')
@@ -20,6 +20,7 @@ describe SocialNetwork::Converter::NodeList do
 
     network = SocialNetwork::Base.new('Test', actor_list, relationship_list)
 
-    expect(SocialNetwork::Converter::NodeList.convert(network)).to eq actor_list
+    expect(SocialNetwork::Converter::ActorList.convert(network))
+      .to eq actor_list
   end
 end
