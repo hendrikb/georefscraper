@@ -2,7 +2,42 @@
 replacements:
   # use https://en.wikipedia.org/wiki/IETF_language_tag here!
   en-US: &english
-    "U.K.": "United Kingdom"
-    "Gvmt.?": "Government"
+    'U.?K.?': 'United Kingdom'
+    'Nat Bk': 'National Bank'
+    'Phila\b': 'Philadelphia'
+    'Leb\b': 'Lebanon '
+    '[Pp]res\.?\b': 'President'
+    'B[kK]': 'Bank'
+    "Int'l": 'International'
+    'Tex\b': 'Texas'
+    'SF': 'San Francisco '
+    "C'wealth": 'Commonwealth'
+    'Ft?W(orth)?\b': 'Fort Worth'
+    'Lux\b': 'Luxemburg'
+    "Luxemb'?g ": 'Luxemburg'
+    'Caymans': 'Cayman Islands'
+    'Cal.?\b': 'California '
+    'Col\.?\b': 'Colonel'
+    'Mgmnt': 'Management'
+    'Inds': 'Industries'
+    'Liecht\b': 'Liechtenstein'
+    '(W.Germany|W. Ger )': 'West Germany'
+    'TX': 'Texas'
+    'Neth\b\.?': 'Netherlands '
+    'NYC': 'New York City'
+    'NY': 'New York'
+    'Gen\b\.?': 'General'
+    "(Gvmt\\.?|[Gg]ov'?t\\.?( [oO]f)?|\\bgovt)": 'Government'
+    "United Kingdomgovt": 'United Kingdom Government'
+    'Fla': 'Florida'
+    '(Wash\W+ )?D\.?C\b\.?': "Washington, D.C."
+    'Mgmt': 'Management'
+    'Maj\b\.?': 'Major'
+    'Aust(ral\b|\.)': 'Australia'
+    'Rev\b\.?': 'Reverend'
+    ' r\. ': ' President '
+    '\bSen\b\.': 'Senator'
+    'So ?Afr': 'South Africa'
+    'Switz\b': 'Switzerland'
   en-UK: *english
 
