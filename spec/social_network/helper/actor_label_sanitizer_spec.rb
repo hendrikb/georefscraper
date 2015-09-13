@@ -7,6 +7,7 @@ module SocialNetwork
       it { should respond_to(:sanitize).with(2).arguments }
 
       context 'substitutions' do
+        # TODO: These DEPEND on the config/actor_label_sanitizer.yml . Fix this.
         it 'replaces based on a string that was given somewhere' do
           expect(ActorLabelSanitizer.sanitize('Test U.K. Bla'))
             .to eq 'Test United Kingdom Bla'

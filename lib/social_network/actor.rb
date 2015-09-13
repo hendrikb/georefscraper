@@ -40,9 +40,7 @@ module SocialNetwork
     private
 
     def sanitize(label)
-      label = SocialNetwork::Helper::ActorLabelSanitizer.sanitize(label)
-      label.gsub!(/ \-$/,'')
-      label
+      SocialNetwork::Helper::ActorLabelSanitizer.sanitize(label)
     end
   end
 
