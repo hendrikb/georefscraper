@@ -1,5 +1,8 @@
 require_relative './social_network/base'
+
 require_relative './social_network/actor'
+require_relative './social_network/organization'
+require_relative './social_network/person'
 require_relative './social_network/relationship'
 
 require_relative './social_network/converter'
