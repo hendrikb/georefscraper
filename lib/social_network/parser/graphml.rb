@@ -55,9 +55,9 @@ module SocialNetwork
 
         def actor_class_by_type(type)
           case type
-          when 'institution'
-            return SocialNetwork::Institution
-          when 'person'
+          when 'Organization'
+            return SocialNetwork::Organization
+          when 'Person'
             return SocialNetwork::Person
           else
             return SocialNetwork::Actor

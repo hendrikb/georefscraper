@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe SocialNetwork::Converter::Dot do
-  let(:me) { SocialNetwork::Actor.new('n1', 'tP', 'Hendrik') }
-  let(:mum) { SocialNetwork::Actor.new('n2', 'tP', 'Mum') }
-  let(:dad) { SocialNetwork::Actor.new('n3', 'tP', 'Dad') }
+  let(:me) { SocialNetwork::Person.new('n1', 'TNp', 'Hendrik') }
+  let(:mum) { SocialNetwork::Person.new('n2', 'TNp', 'Mum') }
+  let(:dad) { SocialNetwork::Person.new('n3', 'TNp', 'Dad') }
 
   let(:relationship_married) do
     SocialNetwork::Relationship.new(mum, dad,
@@ -28,9 +28,9 @@ describe SocialNetwork::Converter::Dot do
     it 'converts stuff to dot' do
       ref_dot_code = <<EOF
 graph \"The Test Family\" {
-\t"n1" [label="Hendrik"];
-\t"n2" [label="Mum"];
-\t"n3" [label="Dad"];
+\t"n1" [style=filled fillcolor=orange label="Hendrik"]
+\t"n2" [style=filled fillcolor=orange label="Mum"]
+\t"n3" [style=filled fillcolor=orange label="Dad"]
 \t"n2" -- "n3";
 \t"n3" -- "n1";
 \t"n2" -- "n1";

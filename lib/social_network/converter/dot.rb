@@ -28,8 +28,21 @@ module SocialNetwork
 
         def write_actors
           @sn.actors.each do |actor|
+            color = fillcolor_for(actor)
             @dot << "\t\"#{actor.id}\" " \
-              "[label=\"#{actor.label.delete('"')}\"];\n"
+              "[style=filled fillcolor=#{color} " \
+             "label=\"#{actor.label.delete('"')}\"]\n"
+          end
+        end
+
+        def fillcolor_for(actor)
+          case actor.class.to_s
+          when 'SocialNetwork::Person'
+            return 'orange'
+          when 'SocialNetwork::Organization'
+            return 'orangered'
+          else
+            return 'white'
           end
         end
 
