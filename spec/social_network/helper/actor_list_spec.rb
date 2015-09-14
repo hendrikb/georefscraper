@@ -8,6 +8,10 @@ module SocialNetwork
       let(:actor3) { SocialNetwork::Actor.new('testid3', 't1', 'l3') }
       let(:actor4) { SocialNetwork::Actor.new('testid4', 't1', 'l3') }
       let(:invalid_actor) { nil }
+      let(:organizational_actor) do
+        SocialNetwork::Organization.new('to1', 'to', 'Organization 1')
+      end
+      let(:personal_actor) { SocialNetwork::Person.new('tp1', 'tp', 'Person') }
 
       subject { ActorList.new([actor1, actor2]) }
 
@@ -24,9 +28,14 @@ module SocialNetwork
           .to raise_error DuplicateActorError
       end
 
-      it 'prevents insertion of something different than Actor' do
+      it 'prevents insertion of something different than Actor or subclasses' do
         expect { ActorList.new([actor1, invalid_actor, actor2]) }
           .to raise_error InvalidActorInsertError
+      end
+
+      it 'can add actor subclasses, though' do
+        expect { ActorList.new([actor1, personal_actor, organizational_actor]) }
+          .not_to raise_error
       end
 
       context '#include?' do
@@ -52,6 +61,10 @@ module SocialNetwork
             expect { subject << invalid_actor }
               .to raise_error InvalidActorInsertError
           end
+          it 'can add actor subclasses, though' do
+            expect { subject << organizational_actor }
+              .not_to raise_error
+          end
         end
         context '#push' do
           it 'adds non duplicate actor to actor list' do
@@ -66,6 +79,10 @@ module SocialNetwork
             expect { subject.push([actor1, invalid_actor, actor2]) }
               .to raise_error InvalidActorInsertError
           end
+          it 'can add actor subclasses, though' do
+            expect { subject.push organizational_actor }
+              .not_to raise_error
+          end
         end
         context '#unshift' do
           it 'adds non duplicate actor to actor list' do
@@ -79,6 +96,10 @@ module SocialNetwork
           it 'prevents insertion of something different than Actor' do
             expect { subject.unshift([actor1, invalid_actor, actor2]) }
               .to raise_error InvalidActorInsertError
+          end
+          it 'can add actor subclasses, though' do
+            expect { subject.unshift organizational_actor }
+              .not_to raise_error
           end
         end
       end

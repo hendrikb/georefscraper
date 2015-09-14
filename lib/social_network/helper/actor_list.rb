@@ -61,7 +61,9 @@ module SocialNetwork
       private
 
       def valid?(actor)
-        actor.class == SocialNetwork::Actor
+        actor.class == SocialNetwork::Actor ||
+          actor.class == SocialNetwork::Organization ||
+          actor.class == SocialNetwork::Person
       end
 
       def qualify_for_insertion?(others)
