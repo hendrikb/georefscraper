@@ -15,6 +15,7 @@ module SocialNetwork
           @network_id = options[:network_name]
 
           @doc = REXML::Document.new(@graphml)
+          @store = YAML.load_file('config/actor_classification.yml')
         end
 
         # @return [SocialNetwork::Base] instance that was parsed from GraphML
@@ -33,11 +34,33 @@ module SocialNetwork
           @actors = {}
           @doc.elements.each('*/graph/node') do |actor|
             id = actor.attributes['id']
-            type = actor.get_text('data[@key="type"]')
-            name = parse_name_for(actor)
-            actor_object = SocialNetwork::Actor.new id, type, name
+            actor_object = determine_actor actor
             @actors[id] = actor_object
             @network.push_actor actor_object
+          end
+        end
+
+        def determine_actor(actor)
+          id = actor.attributes['id']
+          type = actor.get_text('data[@key="type"]')
+          name = parse_name_for(actor)
+          found_type = nil
+          @store['assured_types'].each do |type_regexp, type_config|
+            if Regexp.new(type_regexp).match(type.to_s)
+              found_type = type_config['type']
+            end
+          end
+          actor_class_by_type(found_type).new(id, type, name)
+        end
+
+        def actor_class_by_type(type)
+          case type
+          when 'institution'
+            return SocialNetwork::Institution
+          when 'person'
+            return SocialNetwork::Person
+          else
+            return SocialNetwork::Actor
           end
         end
 

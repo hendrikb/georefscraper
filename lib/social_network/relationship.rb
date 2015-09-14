@@ -4,12 +4,13 @@ module SocialNetwork
   class Relationship
     attr_accessor :source, :target, :type
 
-    # Create new instance of a {Relationship} between two {Actor actors}.
+    # Create new instance of a {Relationship} between two {Actor actors} (or
+    # subclasses like {Person} or {Organization}
     # @param source [Actor] One actor that is in a relationship with another
     # @param target [Actor] Another actor that is in a relationship with one
     # @param type [Object] Some relationship type specification, might be String
     def initialize(source, target, type = nil)
-      if source.class != Actor || target.class != Actor
+      if !Actor.valid?(source) || !Actor.valid?(target)
         fail RelationshipConnectingError, 'Provide Actor as source and target'
       end
 

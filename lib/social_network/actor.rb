@@ -40,6 +40,10 @@ module SocialNetwork
 
     alias_method :to_s, :inspect
 
+    def self.valid?(other)
+      other.class == Actor || other.class.superclass == Actor
+    end
+
     private
 
     def sanitize(label)

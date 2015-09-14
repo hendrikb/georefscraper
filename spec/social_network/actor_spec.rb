@@ -62,5 +62,14 @@ module SocialNetwork
         expect(subject.to_s).to eq subject.inspect
       end
     end
+    context 'validity' do
+      [SocialNetwork::Actor,
+       SocialNetwork::Person, SocialNetwork::Organization] .each do |klass|
+        it "assures validity of #{klass} subclass of Actor" do
+          expect(SocialNetwork::Actor.valid?(klass.new('id', 'type', 'label')))
+            .to be true
+        end
+      end
+    end
   end
 end
