@@ -59,11 +59,11 @@ module SocialNetwork
         end
       end
 
-      # Parses a GraphML file and tries to render a {SocialNetwork::Base social
+      # Parses a GraphML file and tries to render a {SocialNetwork::Base} social
       # network} from it.
       # @return [SocialNetWork::Base] Social Network parsed from the GraphML
       # @param graphml [String] File name to a graphml file
-      # @param overwrite_id [String] Optional new name for the social network
+      # @param options [Hash] Options Hash
       def self.parse(graphml, options = {})
         SocialNetwork::Parser::GraphML::Parser.new(graphml, options).network
       end

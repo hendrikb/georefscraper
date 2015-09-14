@@ -31,6 +31,9 @@ module SocialNetwork
       "#{self.class}[#{id}] \"#{label}\""
     end
 
+    # Sets the {Actor#label}, i.e. human readable representation of this Actor
+    # @param label [String] New human readable label to be assigned
+    # @return [void]
     def label=(label)
       @label = sanitize(label)
     end
