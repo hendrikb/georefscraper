@@ -3,6 +3,9 @@ module SocialNetwork
   module Helper
     # Provide some drop in logics for {Actor#label} sanitation
     module ActorLabelSanitizer
+      # Regexes, that get substituted to '' (empty string) in
+      # #clean_from_standard_abbrev (which is used
+      # somewhere in the label sanitizer process in {ActorList}
       STANDARD_ABBREV_TO_REMOVE = [
         'Ents\b.?', 'S\.A\.', ' President .+\z', 'Corp\b\.?', 'A\.G\.', 'esq\.'
       ]
