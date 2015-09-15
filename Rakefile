@@ -5,6 +5,38 @@ require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 
 namespace :lombardi_graphml do
+  namespace :merge_to do
+    desc "Merge graphml files (space sep't) by their actor labels to dot graph"
+    task :dot, [:graphmls] do |_t, args|
+      require 'digest'
+
+      result_actors = SocialNetwork::Helper::ActorList.new([])
+      result_relationships = SocialNetwork::Helper::RelationshipList.new([])
+      args[:graphmls].split(' ').each do |graphml|
+        sn = SocialNetwork::Parser::GraphML.parse(File.new(graphml))
+        sn.actors.each do |actor|
+          actor.id = Digest::SHA256.base64digest(actor.label)
+          begin
+            result_actors << actor
+          rescue SocialNetwork::Helper::DuplicateActorError
+            $stderr.puts "// #{graphml}: duplicate actor #{actor}"
+          end
+        end
+
+        sn.relationships.each do |rl|
+          begin
+            result_relationships << rl
+          rescue SocialNetwork::Helper::DuplicateRelationshipError
+            $stderr.puts "// #{graphml}: duplicate relationship #{rl}"
+          end
+        end
+      end
+      results = SocialNetwork::Base.new('Results', result_actors,
+                                        result_relationships)
+      puts SocialNetwork::Converter::Dot.convert(results)
+    end
+  end
+
   desc 'Validate social network lombardi graphml. Look for exceptions in files!'
   task :validate, [:graphml, :name] do |_t, args|
     begin
