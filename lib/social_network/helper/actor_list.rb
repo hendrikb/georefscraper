@@ -10,7 +10,7 @@ module SocialNetwork
       # Raises {InvalidActorInsertError} if one of the given actors is not of
       # class {Actor}.
       def initialize(actor_array)
-        if actor_array.any? { |n| !valid?(n) }
+        if actor_array.any? { |n| !SocialNetwork::Actor.valid?(n) }
           fail InvalidActorInsertError, 'Given invalid actor was not inserted'
         end
 
@@ -26,10 +26,12 @@ module SocialNetwork
       # @param other [Actor] The other instance to to be added to this list
       # @return [ActorList] The list plus the newly added {Actor}
       def <<(other)
-        fail InvalidActorInsertError, 'Actor is invalid' unless valid?(other)
+        unless SocialNetwork::Actor.valid?(other)
+          fail InvalidActorInsertError, "Actor #{other} is invalid"
+        end
 
         if include?(other)
-          fail DuplicateActorError, 'Actor ID  alread exists in ActorList'
+          fail DuplicateActorError, "Actor #{other} alread exists in ActorList"
         end
         super(other)
       end
@@ -60,17 +62,11 @@ module SocialNetwork
 
       private
 
-      def valid?(actor)
-        actor.class == SocialNetwork::Actor ||
-          actor.class == SocialNetwork::Organization ||
-          actor.class == SocialNetwork::Person
-      end
-
       def qualify_for_insertion?(others)
         others.each do |o|
           fail InvalidActorInsertError,
-               'cant add Invalid actor' unless valid?(o)
-          fail DuplicateActorError, 'Actor already present' if include?(o)
+               'cant add Invalid actor' unless SocialNetwork::Actor.valid?(o)
+          fail DuplicateActorError, "Actor #{o} already present" if include?(o)
         end
       end
     end
