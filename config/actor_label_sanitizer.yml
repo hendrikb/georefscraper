@@ -37,7 +37,18 @@ replacements:
     'Rev\b\.?': 'Reverend'
     ' r\. ': ' President '
     '\bSen\b\.': 'Senator'
-    'So ?Afr': 'South Africa'
+    '\bSheikh?\b': 'Sheikh'
+    'So( \.)?Afr\b\.?': 'South Africa'
     'Switz\b': 'Switzerland'
+    'Union Bank of Switzerland': 'UBS Switzerland'
+    "Harvard Endow(m't Mass)?": 'Harvard Endowment'
+    '\ABush Energy\z': 'Bush Energy Texas'
+    '\AGeorge W. Bush.+': 'George W. Bush'
+    'JB( & )?Assocs\b\.?': "JB & Associates"
+    'Lloyd Bentsen US sen 1971-92': 'Senator Lloyd Bentson Jr.'
+    'Mt. Blanc co.': 'Mont Blanc Co.'
+    'Sid R. Bass': 'Sid Bass'
+    'Sheikh (Isa bin )?Khalifah( of Bahrain)?': 'Sheikh Khalifah'
+    'Spectrum(7| Seven) Oil Texas': 'Spectrum 7'
   en-UK: *english
 
