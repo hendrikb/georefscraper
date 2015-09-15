@@ -40,6 +40,10 @@ module SocialNetwork
 
     alias_method :to_s, :inspect
 
+    # Tells whether is some other {Actor} is valid by looking at its class or
+    # superclass. Either of them must be {Actor}
+    # @param other {Object} The object, preferably an {Actor}, to check
+    # @return [Boolean] True if is a valid instance of actor or any subclass
     def self.valid?(other)
       other.class == Actor || other.class.superclass == Actor
     end
