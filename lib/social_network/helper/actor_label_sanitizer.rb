@@ -3,6 +3,9 @@ module SocialNetwork
   module Helper
     # Provide some drop in logics for {Actor#label} sanitation
     module ActorLabelSanitizer
+      STANDARD_ABBREV_TO_REMOVE = [
+        'Ents\b.?', 'S\.A\.', ' President .+\z', 'Corp\b\.?', 'A\.G\.', 'esq\.'
+      ]
       # Does some reasonable sanitation according to the
       # config/actor_label_sanitizer.yml file, also removes some trailing and
       # leading whitespace and dashes stuff. See Code for details. This is WIP!
@@ -17,6 +20,7 @@ module SocialNetwork
           re = Regexp.new needle
           label.gsub!(re, substitution)
         end
+        label = clean_from_standard_abbrev(label)
         label
       end
 
@@ -28,6 +32,13 @@ module SocialNetwork
         label.strip!
         label.sub!(/\-\z/, '') if label.match(/[a-z]+\-\z/)
         label
+      end
+
+      def self.clean_from_standard_abbrev(label)
+        STANDARD_ABBREV_TO_REMOVE.each do |abbrev|
+          label.gsub!(Regexp.new(abbrev), '')
+        end
+        label.gsub('  ', ' ')
       end
     end
   end
