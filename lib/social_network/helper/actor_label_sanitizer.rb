@@ -7,7 +7,8 @@ module SocialNetwork
       # #clean_from_standard_abbrev (which is used
       # somewhere in the label sanitizer process in {ActorList}
       STANDARD_ABBREV_TO_REMOVE = [
-        'Ents\b.?', 'S\.A\.', ' President .+\z', 'Corp\b\.?', 'A\.G\.', 'esq\.'
+        'Ents\b.?', 'S\.A\.', ' President .+\z', 'Corp\b\.?', 'A\.?G\b\.?',
+        'esq\.'
       ]
       # Does some reasonable sanitation according to the
       # config/actor_label_sanitizer.yml file, also removes some trailing and
