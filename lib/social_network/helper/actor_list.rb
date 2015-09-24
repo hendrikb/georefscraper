@@ -60,6 +60,15 @@ module SocialNetwork
         super
       end
 
+      # Look for an {Actor} with its given {Actor#id} in this {ActorList}
+      # @param id [Object] A unique id within one social network. i.e. a String
+      # @return [Actor] The {Actor} with the given ID in this network or nil
+      #   if it was not found
+      def find_by_id(id)
+        each { |actor| return actor if actor.id == id }
+        nil
+      end
+
       private
 
       def qualify_for_insertion?(others)
