@@ -60,7 +60,20 @@ module SocialNetwork
     # Provide a human readable representation for the Social Network
     def inspect
       "#{self.class}[#{name}] - Actors: #{actors.count}" \
-               " Relationships: #{relationships.count}"
+        " Relationships: #{relationships.count}"
+    end
+
+    # Giving Neighbors of given {Actor} in this instance of the social network
+    # @param actor [Actor] Given actor to check who is connected to it
+    # @return [SocialNetwork::Helper::ActorList] List of actors connected to
+    #    the given one
+    def neighbors_of(actor)
+      neighbors = SocialNetwork::Helper::ActorList.new([])
+      @relationships.each do |rel|
+        neighbors << rel.source if rel.target == actor
+        neighbors << rel.target if rel.source == actor
+      end
+      neighbors
     end
   end
 

@@ -89,6 +89,28 @@ module SocialNetwork
             .to raise_error Helper::DuplicateRelationshipError
         end
       end
+
+      context 'actor handling' do
+        context 'neighboring actors' do
+          subject do
+            SocialNetwork::Parser::GraphML.parse(
+              File.new(File.join('spec', 'test_ref_mini.graphml')))
+          end
+          let(:bart) { subject.actors.find_by_id('bart') }
+          let(:maggie) { subject.actors.find_by_id('maggie') }
+          let(:lisa) { subject.actors.find_by_id('lisa') }
+
+          it 'can returns an actorlist' do
+            expect(subject.neighbors_of(bart))
+              .to be_kind_of SocialNetwork::Helper::ActorList
+          end
+
+          it 'can returns the real neighbors' do
+            expect(subject.neighbors_of(bart))
+              .to eq SocialNetwork::Helper::ActorList.new([lisa, maggie])
+          end
+        end
+      end
     end
   end
 end
