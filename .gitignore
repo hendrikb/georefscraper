@@ -1,8 +1,0 @@
-coverage/
-data/lombardi/*.graphml
-doc/
-.yardoc/
-
-*.dot
-*.png
-

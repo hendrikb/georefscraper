@@ -5,13 +5,10 @@ Analyze and import social networks (works with Lombardi networks:
 http://www.lombardinetworks.net/networks/the-networks/) and geo-locate their
 actors.
 
-Usage
---
+The **project lives on** on gitlab:
 
-Check ```rake -T``` for a list of available commands. Appart from creating the
-documentation you might be able to import files from the **data/** directory
-and geocode those graph's nodes.
+The backend application and main processor: https://gitlab.com/hendrikb/georefscraper
 
-Also you can convert the graphml graphs to the DOT file format for graphviz
-(http://www.graphviz.org/).
+A Frontend and API to georefscraper: https://gitlab.com/hendrikb/georef_frontend_api
 
+A Ruby Gem that provides Stanford CoreNLP results as a convenient data structure: https://gitlab.com/hendrikb/stanford_corenlp_result
